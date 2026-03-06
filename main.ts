@@ -41,7 +41,7 @@ input.onButtonPressed(Button.A, function() {
     pins.digitalWritePin(DigitalPin.P13, 0)
     pins.digitalWritePin(DigitalPin.P14, 0)
 
-// turn on cyan
+    // turn on cyan
     pins.digitalWritePin(DigitalPin.P15, 1)
     pins.digitalWritePin(DigitalPin.P14, 1)
     basic.showString('Cyan')
@@ -50,7 +50,7 @@ input.onButtonPressed(Button.A, function() {
     pins.digitalWritePin(DigitalPin.P15, 0)
     pins.digitalWritePin(DigitalPin.P14, 0)
 
-// turn on yellow
+    // turn on yellow
     pins.digitalWritePin(DigitalPin.P13, 1)
     pins.digitalWritePin(DigitalPin.P15, 1)
     basic.showString('Yellow')
@@ -59,7 +59,7 @@ input.onButtonPressed(Button.A, function() {
     pins.digitalWritePin(DigitalPin.P13, 0)
     pins.digitalWritePin(DigitalPin.P15, 0)
 
-// turn on white
+    // turn on white
     pins.digitalWritePin(DigitalPin.P13, 1)
     pins.digitalWritePin(DigitalPin.P14, 1)
     pins.digitalWritePin(DigitalPin.P15, 1)
