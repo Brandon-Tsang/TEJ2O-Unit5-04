@@ -1,10 +1,11 @@
 {
-    "name": "TEJ2O ⇢ Unit #2-08",
+    "name": "TEJ2O ⇢ Unit #5-04",
     "description": "",
     "dependencies": {
         "core": "*",
         "radio": "*",
-        "microphone": "*"
+        "microphone": "*",
+        "neopixel": "github:microsoft/pxt-neopixel#v0.7.6"
     },
     "files": [
         "main.ts",

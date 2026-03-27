@@ -5,68 +5,41 @@
  * This program will show LED colors.
 */
 
+// variables
+let neopixelStrip: neopixel.Strip = null
+
 // setup
 basic.clearScreen()
 basic.showIcon(IconNames.Happy)
 
-// turn on the LEDs
-input.onButtonPressed(Button.A, function() {
-    // turn on red
-    pins.digitalWritePin(DigitalPin.P13, 1)
-    basic.showString('Red')
-    basic.pause(1000)
-    basic.clearScreen()
-    pins.digitalWritePin(DigitalPin.P13, 0)
+// neopixel cleanup
+neopixelStrip = neopixel.create(DigitalPin.P16, 4, NeoPixelMode.RGB)
+neopixelStrip.setPixelColor(0, neopixel.colors(NeoPixelColors.Black))
+neopixelStrip.setPixelColor(1, neopixel.colors(NeoPixelColors.Black))
+neopixelStrip.setPixelColor(2, neopixel.colors(NeoPixelColors.Black))
+neopixelStrip.setPixelColor(3, neopixel.colors(NeoPixelColors.Black))
+neopixelStrip.show()
+basic.showIcon(IconNames.Happy)
 
-    // turn on green
-    pins.digitalWritePin(DigitalPin.P14, 1)
-    basic.showString('Green')
-    basic.pause(1000)
+// traffic light
+input.onButtonPressed(Button.A, function (){
     basic.clearScreen()
-    pins.digitalWritePin(DigitalPin.P14, 0)
 
-    // turn on blue
-    pins.digitalWritePin(DigitalPin.P15, 1)
-    basic.showString('Blue')
-    basic.pause(1000)
-    basic.clearScreen()
-    pins.digitalWritePin(DigitalPin.P15, 0)
+    // green
+    neopixelStrip.setPixelColor(2, NeoPixelColors.Green)
+    neopixelStrip.show()
+    basic.pause(2000)
+    neopixelStrip.clear()
 
-    // turn on magenta
-    pins.digitalWritePin(DigitalPin.P13, 1)
-    pins.digitalWritePin(DigitalPin.P15, 1)
-    basic.showString('Magenta')
-    basic.pause(1000)
-    basic.clearScreen()
-    pins.digitalWritePin(DigitalPin.P13, 0)
-    pins.digitalWritePin(DigitalPin.P15, 0)
+    // yellow
+    neopixelStrip.setPixelColor(1, NeoPixelColors.Yellow)
+    neopixelStrip.show()
+    basic.pause(2000)
+    neopixelStrip.clear()
 
-    // turn on cyan
-    pins.digitalWritePin(DigitalPin.P15, 1)
-    pins.digitalWritePin(DigitalPin.P14, 1)
-    basic.showString('Cyan')
-    basic.pause(1000)
-    basic.clearScreen()
-    pins.digitalWritePin(DigitalPin.P15, 0)
-    pins.digitalWritePin(DigitalPin.P14, 0)
-
-    // turn on yellow
-    pins.digitalWritePin(DigitalPin.P13, 1)
-    pins.digitalWritePin(DigitalPin.P14, 1)
-    basic.showString('Yellow')
-    basic.pause(1000)
-    basic.clearScreen()
-    pins.digitalWritePin(DigitalPin.P13, 0)
-    pins.digitalWritePin(DigitalPin.P14, 0)
-
-    // turn on white
-    pins.digitalWritePin(DigitalPin.P13, 1)
-    pins.digitalWritePin(DigitalPin.P14, 1)
-    pins.digitalWritePin(DigitalPin.P15, 1)
-    basic.showString('White')
-    basic.pause(1000)
-    basic.clearScreen()
-    pins.digitalWritePin(DigitalPin.P13, 0)
-    pins.digitalWritePin(DigitalPin.P14, 0)
-    pins.digitalWritePin(DigitalPin.P15, 0)
+    // red
+    neopixelStrip.setPixelColor(0, NeoPixelColors.Red)
+    neopixelStrip.show()
+    basic.pause(2000)
+    neopixelStrip.clear()
 })
