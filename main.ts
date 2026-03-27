@@ -2,7 +2,7 @@
  *
  * Created by: Brandon
  * Created on: Mar 2026
- * This program will show LED colors.
+ * This program will show Traffic lights.
 */
 
 // variables
